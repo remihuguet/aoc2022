@@ -1,0 +1,6 @@
+pytest
+pytest-sugar
+flake8
+black
+pep8-naming
+mypy
