@@ -1,6 +1,6 @@
 pytest
-pytest-sugar
+pytest - sugar
 flake8
 black
-pep8-naming
+pep8 - naming
 mypy

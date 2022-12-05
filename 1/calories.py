@@ -1,5 +1,6 @@
 from typing import List, Tuple
 
+
 def parse(file: str) -> List[Tuple[int]]:
     with open(file, "r") as f:
         input, current = [], []
@@ -12,6 +13,7 @@ def parse(file: str) -> List[Tuple[int]]:
                     input.append(tuple(current))
                 current = []
     return input
+
 
 def find_max_calories_carried(input: List[Tuple[int]]) -> int:
     return max([sum(meal) for meal in input])

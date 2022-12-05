@@ -1,9 +1,19 @@
+from crates import parse, process_move, process_move_9001
+
+
 def test_parse_file():
-    assert [
-        ((2, 4), (6, 8)),
-        ((2, 3), (4, 5)),
-        ((5, 7), (7, 9)),
-        ((2, 8), (3, 7)),
-        ((6, 6), (4, 6)),
-        ((2, 6), (4, 8)),
-    ] == parse("5/test_input.txt")
+    assert {
+        "stacks": [
+            ["Z", "N"],
+            ["M", "C", "D"],
+            ["P"],
+        ],
+        "instructions": [(1, 2, 1), (3, 1, 3), (2, 2, 1), (1, 1, 2)],
+    } == parse("5/test_input.txt")
+
+
+def test_process_move():
+    assert "CMZ" == process_move(parse("5/test_input.txt"))
+
+def test_process_move_9001():
+    assert "MCD" == process_move_9001(parse("5/test_input.txt"))

@@ -1,7 +1,14 @@
 from calories import find_max_calories_carried, parse, find_top_three_calories
 
+
 def test_parse_file():
-    assert [(1000, 2000, 3000), (4000,), (5000, 6000), (7000, 8000, 9000), (10000,)] == parse("1/test_input.txt")
+    assert [
+        (1000, 2000, 3000),
+        (4000,),
+        (5000, 6000),
+        (7000, 8000, 9000),
+        (10000,),
+    ] == parse("1/test_input.txt")
 
 
 def test_most_calories():
