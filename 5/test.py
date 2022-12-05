@@ -15,5 +15,6 @@ def test_parse_file():
 def test_process_move():
     assert "CMZ" == process_move(parse("5/test_input.txt"))
 
+
 def test_process_move_9001():
     assert "MCD" == process_move_9001(parse("5/test_input.txt"))

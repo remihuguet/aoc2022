@@ -36,7 +36,7 @@ def process_move_9001(input: Dict[str, Any]) -> str:
     stacks = input["stacks"]
     instructions = input["instructions"]
     for instr in instructions:
-        stacks[instr[2] - 1].extend(stacks[instr[1] - 1][-instr[0]:])
+        stacks[instr[2] - 1].extend(stacks[instr[1] - 1][-instr[0] :])
         for _ in range(instr[0]):
-            stacks[instr[1] -1 ].pop()
+            stacks[instr[1] - 1].pop()
     return "".join([s[-1] for s in stacks])
