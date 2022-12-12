@@ -66,6 +66,7 @@ def _compute_score(start: int, end: int, row: List[int], height: int, reversed=F
             break
     return score
 
+
 def compute_max_tree_score(map: List[List[int]]) -> int:
     return max(
         compute_tree_score(map, line, column)

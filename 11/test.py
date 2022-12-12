@@ -1,4 +1,4 @@
-from monkey import Monkey, parse
+from monkey import Monkey, parse, compute_round, compute_rounds, compute_monkey_biz
 
 
 def test_parse_input():
@@ -36,3 +36,26 @@ def test_parse_input():
             target_monkey_false=1,
         ),
     ] == parse("11/test_input.txt")
+
+
+def test_compute_one_round():
+    monkeys = parse("11/test_input.txt")
+
+    round_1_monkeys = compute_round(monkeys)
+
+    assert round_1_monkeys[0].items == [20, 23, 27, 26]
+    assert round_1_monkeys[1].items == [2080, 25, 167, 207, 401, 1046]
+    assert round_1_monkeys[2].items == []
+    assert round_1_monkeys[3].items == []
+
+
+def test_compute_monkey_business():
+    monkeys = parse("11/test_input.txt")
+    monkeys = compute_rounds(monkeys, 20)
+    assert 10605 == compute_monkey_biz(monkeys)
+
+
+def test_long_biz():
+    monkeys = parse("11/test_input.txt")
+    monkeys = compute_rounds(monkeys, 10000)
+    assert 2713310158 == compute_monkey_biz(monkeys)

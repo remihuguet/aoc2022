@@ -1,5 +1,11 @@
 import pytest
-from tree import parse, is_tree_visible, count_visible_trees, compute_tree_score,compute_max_tree_score
+from tree import (
+    parse,
+    is_tree_visible,
+    count_visible_trees,
+    compute_tree_score,
+    compute_max_tree_score,
+)
 
 
 def test_parse():
@@ -47,6 +53,7 @@ def test_tree_score():
 
     assert compute_tree_score(map, 1, 2) == 4
     assert compute_tree_score(map, 3, 2) == 8
+
 
 def test_max_tree_score():
     map = parse("8/test_input.txt")
